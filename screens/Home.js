@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from '@expo/vector-icons';
 import colors from '../colors';
 import { Entypo } from '@expo/vector-icons';
-const catImageUrl = "https://cdn.pixabay.com/photo/2016/11/29/13/14/attractive-1869761_960_720.jpg";
+const profileImageUrl = "https://cdn.pixabay.com/photo/2016/11/29/13/14/attractive-1869761_960_720.jpg";
 
 import { SafeAreaView } from "react-native";
 
@@ -17,7 +17,7 @@ const Home = () => {
             ),
             headerRight: () => (
                 <Image
-                    source={{ uri: catImageUrl }}
+                    source={{ uri: profileImageUrl }}
                     style={{
                         width: 40,
                         height: 40,
@@ -29,15 +29,34 @@ const Home = () => {
     }, [navigation]);
 
     return (
-
         <View style={styles.container}>
-            
+            <h4>Welcome to FreeSpace :)</h4>
+            <h2>Support Groups</h2>
+
+            <h4>Depression Group</h4>
             <TouchableOpacity
                 onPress={() => navigation.navigate("Chat")}
                 style={styles.chatButton}
             >
                 <Entypo name="chat" size={24} color={colors.lightGray} />
             </TouchableOpacity>
+
+            <h4>Anxiety Group</h4>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Chat")}
+                style={styles.chatButton}
+            >
+                <Entypo name="chat" size={24} color={colors.lightGray} />
+            </TouchableOpacity>
+
+            <h4>PTSD Group</h4>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Chat")}
+                style={styles.chatButton}
+            >
+                <Entypo name="chat" size={24} color={colors.lightGray} />
+            </TouchableOpacity>
+
         </View>
     );
     };
@@ -47,8 +66,9 @@ const Home = () => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
-            justifyContent: 'flex-end',
-            alignItems: 'flex-end',
+            //justifyContent: 'flex-end', 
+            //alignItems: 'flex-end', 
+            alignItems: "center",
             backgroundColor: "#fff",
         },
         chatButton: {
